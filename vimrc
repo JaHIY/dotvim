@@ -310,7 +310,7 @@ else
     echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 
-set termencoding=chinese
+set termencoding=utf-8
 set fileencodings=ucs-bom,utf-8,shift-jis,cp936,cp950,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
 set ambiwidth=double
@@ -406,5 +406,4 @@ endif
 " nerdtree
 let g:NERDTreeWinSize=25
 let g:NERDTreeMinimalUI=1
-let g:nerdtree_tabs_open_on_console_startup=1
 nmap nc :NERDTreeTabsToggle<cr>
