@@ -7,3 +7,6 @@
 [submodule "bundle/jsbeautify"]
 	path = bundle/jsbeautify
 	url = git://github.com/vim-scripts/jsbeautify.git
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
+	url = git://github.com/jistr/vim-nerdtree-tabs.git

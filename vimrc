@@ -406,6 +406,5 @@ endif
 " nerdtree
 let g:NERDTreeWinSize=25
 let g:NERDTreeMinimalUI=1
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap nc :NERDTreeToggle<cr>
+let g:nerdtree_tabs_open_on_console_startup=1
+nmap nc :NERDTreeTabsToggle<cr>
