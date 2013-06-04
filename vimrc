@@ -1,7 +1,17 @@
-" pathogen plugin
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+" 关闭 vi 兼容模式
+set nocompatible
+
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'tomasr/molokai'
+Bundle 'vim-renpy'
+
 
 " 屏蔽方向键
 nnoremap <up> <nop>
@@ -20,7 +30,8 @@ set number
 syntax on
 
 " 设定配色方案
-color monokai
+let g:molokai_original = 1
+color molokai
 
 " 设置右下角标尺
 set ruler
@@ -93,9 +104,6 @@ set lines=40 columns=100
 " 设置leader为,
 "let mapleader=","
 "let g:mapleader=","
-
-" 关闭 vi 兼容模式
-set nocompatible
 
 " 检测文件类型
 filetype plugin indent on
@@ -316,11 +324,6 @@ set fileencoding=utf-8
 set ambiwidth=double
 " }}}
 
-" {{{全文搜索选中的文字
-vnoremap <silent> <leader>f y/<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
-vnoremap <silent> <leader>F y?<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
-" }}}
-
 " 删除所有行未尾空格
 nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
 
@@ -347,61 +350,6 @@ nnoremap <leader>1 :set filetype=xhtml<cr>
 nnoremap <leader>2 :set filetype=css<cr>
 nnoremap <leader>3 :set filetype=javascript<cr>
 nnoremap <leader>4 :set filetype=php<cr>
-
-" =====================
-" AutoCmd 自动运行
-" =====================
-if has("autocmd")
-    filetype plugin indent on " 打开文件类型检测
-
-    augroup vimrcEx " 记住上次文件位置
-        au!
-        autocmd FileType text setlocal textwidth=80
-        autocmd BufReadPost *
-                    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                    \   exe "normal g`\"" |
-                    \ endif
-    augroup END
-
-    " 括号自动补全
-    function! AutoClose()
-        :inoremap ( ()<ESC>i
-        :inoremap " ""<ESC>i
-        :inoremap ' ''<ESC>i
-        :inoremap { {}<ESC>i
-        :inoremap [ []<ESC>i
-        :inoremap ) <c-r>=ClosePair(')')<CR>
-        :inoremap } <c-r>=ClosePair('}')<CR>
-        :inoremap ] <c-r>=ClosePair(']')<CR>
-    endf
-
-    function! ClosePair(char)
-        if getline('.')[col('.') - 1] == a:char
-            return "\<Right>"
-        else
-            return a:char
-        endif
-    endf
-
-    " 自动最大化窗口
-    if has('gui_running')
-        if has("win32")
-            au GUIEnter * simalt ~x
-        endif
-    endif
-
-    " 格式化 JavaScript 文件
-    "au FileType javascript map <f12> :call g:Jsbeautify()<cr>
-
-    " CSS3 语法支持
-    "au BufRead,BufNewFile *.css set ft=css syntax=css3
-
-    " 将指定文件的换行符转换成 UNIX 格式
-    au FileType php,javascript,html,css,python,vim,vimwiki set ff=unix
-
-    " Python 文件的一般设置，比如不要 tab 等
-    "autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
-endif
 
 " nerdtree
 let g:NERDTreeWinSize=25
