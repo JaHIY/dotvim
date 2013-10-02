@@ -10,8 +10,10 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'tomasr/molokai'
-Bundle 'vim-renpy'
-
+" Bundle 'vim-renpy'
+Bundle 'zeis/vim-kolor'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'lilypink'
 
 " 屏蔽方向键
 nnoremap <up> <nop>
@@ -30,8 +32,16 @@ set number
 syntax on
 
 " 设定配色方案
-let g:molokai_original = 1
-color molokai
+"let g:molokai_original = 1
+"color molokai
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+color solarized
 
 " 设置右下角标尺
 set ruler
@@ -354,4 +364,5 @@ nnoremap <leader>4 :set filetype=php<cr>
 " nerdtree
 let g:NERDTreeWinSize=25
 let g:NERDTreeMinimalUI=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 nmap nc :NERDTreeTabsToggle<cr>
