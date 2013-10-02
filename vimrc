@@ -11,7 +11,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'tomasr/molokai'
 " Bundle 'vim-renpy'
-Bundle 'zeis/vim-kolor'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'lilypink'
 
