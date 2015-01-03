@@ -261,7 +261,7 @@ if has("gui_running")
     endif
 
     if has("unix") && !has('gui_macvim')
-        set guifont=Monaco\ 10
+        set guifont=Monaco\ 12
     endif
 
     if has("mac") || has("gui_macvim")
