@@ -4,15 +4,18 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'tomasr/molokai'
-" Bundle 'vim-renpy'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'lilypink'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tomasr/molokai'
+" Plugin 'vim-renpy'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'lilypink'
+
+call vundle#end()
+filetype plugin indent on
 
 " 屏蔽方向键
 nnoremap <up> <nop>
