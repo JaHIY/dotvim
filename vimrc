@@ -111,7 +111,7 @@ set mouse=a
 " 自动重新读入
 set autoread " 当文件在外部被修改，自动更新该文件
 
-set lines=40 columns=100
+"set lines=40 columns=100
 
 " 设置leader为,
 "let mapleader=","
