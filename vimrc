@@ -3,7 +3,7 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
@@ -13,6 +13,7 @@ Plugin 'tomasr/molokai'
 " Plugin 'vim-renpy'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lilypink'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -34,16 +35,16 @@ set number
 syntax on
 
 " 设定配色方案
-"let g:molokai_original = 1
-"color molokai
+let g:molokai_original = 1
+color molokai
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
-
-color solarized
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"endif
+"
+"color solarized
 
 " 设置右下角标尺
 set ruler
@@ -368,3 +369,12 @@ let g:NERDTreeWinSize=25
 let g:NERDTreeMinimalUI=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap nc :NERDTreeTabsToggle<cr>
+
+nmap ,, :%!perltidy<cr>
+
+" emmet-vim
+let g:user_emmet_install_global = 0
+autocmd FileType xhtml,html,css EmmetInstall
+"only enable normal mode functions
+let g:user_emmet_mode='a'
+let g:user_emmet_expandabbr_key = '<c-e>'
