@@ -35,16 +35,17 @@ set number
 syntax on
 
 " 设定配色方案
-let g:molokai_original = 1
-color molokai
+"let g:molokai_original = 1
+"color molokai
 
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif
-"
-"color solarized
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+    let g:solarized_termcolors=256
+endif
+
+color solarized
 
 " 设置右下角标尺
 set ruler
