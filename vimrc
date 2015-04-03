@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tomasr/molokai'
+Plugin 'crusoexia/vim-monokai'
 " Plugin 'vim-renpy'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lilypink'
@@ -35,18 +36,20 @@ set number
 syntax on
 
 " 设定配色方案
-"let g:molokai_original = 1
+"let g:molokai_original=1
 "color molokai
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-    let g:solarized_termcolors=256
-    let g:solarized_termtrans=1
-endif
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"    let g:solarized_termcolors=256
+"    let g:solarized_termtrans=1
+"endif
+"
+"color solarized
 
-color solarized
+color monokai
 
 " 设置右下角标尺
 set ruler
