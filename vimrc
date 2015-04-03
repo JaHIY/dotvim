@@ -1,6 +1,7 @@
 " 关闭 vi 兼容模式
 set nocompatible
 
+filetype on
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,6 +12,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tomasr/molokai'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'kajamite/vim-monokai2'
 " Plugin 'vim-renpy'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lilypink'
@@ -36,8 +38,8 @@ set number
 syntax on
 
 " 设定配色方案
-"let g:molokai_original=1
-"color molokai
+let g:molokai_original=1
+color molokai
 
 "if has('gui_running')
 "    set background=light
@@ -49,7 +51,7 @@ syntax on
 "
 "color solarized
 
-color monokai
+"color monokai2
 
 " 设置右下角标尺
 set ruler
