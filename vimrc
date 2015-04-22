@@ -17,6 +17,11 @@ Plugin 'kajamite/vim-monokai2'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lilypink'
 Plugin 'mattn/emmet-vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'bonsaiben/bootstrap-snippets'
+Plugin 'vim-perl/vim-perl'
 
 call vundle#end()
 filetype plugin indent on
@@ -369,7 +374,7 @@ inoremap <c-k> <c-o>gk
 nnoremap <leader>1 :set filetype=xhtml<cr>
 nnoremap <leader>2 :set filetype=css<cr>
 nnoremap <leader>3 :set filetype=javascript<cr>
-nnoremap <leader>4 :set filetype=php<cr>
+nnoremap <leader>4 :set filetype=tt2html<cr>
 
 " nerdtree
 let g:NERDTreeWinSize=25
@@ -385,3 +390,6 @@ autocmd FileType xhtml,html,css EmmetInstall
 "only enable normal mode functions
 let g:user_emmet_mode='a'
 let g:user_emmet_expandabbr_key = '<c-e>'
+
+" vim-perl
+au BufNewFile,BufRead *.tt setf tt2html
