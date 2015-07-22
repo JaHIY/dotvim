@@ -13,6 +13,11 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tomasr/molokai'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'kajamite/vim-monokai2'
+Plugin 'vim-scripts/Son-of-Obisidian'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " Plugin 'vim-renpy'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lilypink'
@@ -22,6 +27,11 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'bonsaiben/bootstrap-snippets'
 Plugin 'vim-perl/vim-perl'
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+Plugin 'yko/mojo.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -375,6 +385,7 @@ nnoremap <leader>1 :set filetype=xhtml<cr>
 nnoremap <leader>2 :set filetype=css<cr>
 nnoremap <leader>3 :set filetype=javascript<cr>
 nnoremap <leader>4 :set filetype=tt2html<cr>
+nnoremap <leader>4 :set filetype=html.epl<cr>
 
 " nerdtree
 let g:NERDTreeWinSize=25
