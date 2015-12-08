@@ -1,40 +1,23 @@
 " 关闭 vi 兼容模式
 set nocompatible
 
-filetype on
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mattn/emmet-vim'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tomasr/molokai'
-Plugin 'crusoexia/vim-monokai'
-Plugin 'kajamite/vim-monokai2'
-Plugin 'vim-scripts/Son-of-Obisidian'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-" Plugin 'vim-renpy'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'lilypink'
-Plugin 'mattn/emmet-vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'bonsaiben/bootstrap-snippets'
-Plugin 'vim-perl/vim-perl'
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'yko/mojo.vim'
 
-Plugin 'yko/mojo.vim'
+call plug#end()
+" The caveat is that you should *never* use PlugUpgrade
+delc PlugUpgrade
 
-call vundle#end()
-filetype plugin indent on
 
 " 屏蔽方向键
 nnoremap <up> <nop>
